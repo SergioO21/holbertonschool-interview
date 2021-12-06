@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def canUnlockAll(boxes):
 
     keys = [0]
@@ -10,12 +11,12 @@ def canUnlockAll(boxes):
 
         keys.sort()
 
-        if keys[0] < len(boxes) and not keys[0] in storage:
+        if keys[0] < len(boxes) and keys[0] not in storage:
 
             storage.append(keys[0])
 
             for value in boxes[keys[0]]:
-                if not value in keys and not value in storage:
+                if value not in keys and value not in storage:
                     keys.append(value)
 
         del keys[0]
